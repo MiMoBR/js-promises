@@ -1,0 +1,25 @@
+let cleanRoom = function(){       --------- PART 1
+	return new Promise(function(resolve, reject){
+		resolve('Clean the room, ');
+	});	
+};
+
+let removeGarbage = function(message){       --------- PART 2
+	return new Promise(function(resolve, reject){
+		resolve(message + ' remove the garbage, so ');
+	});	
+};
+
+let winIcecream = function(message){       --------- PART 3
+	return new Promise(function(resolve, reject){
+		resolve(message + ' you won a icecream!');
+	});	
+};
+
+cleanRoom().then(function(result){
+	return removeGarbage(result);
+}).then(function(result){
+	return winIcecream(result);
+}).then(function(result){
+	console.log('Finish Result --- ' + result);
+})
