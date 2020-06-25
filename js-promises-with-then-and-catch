@@ -1,3 +1,35 @@
+//const isClean = () =>{
+//  return "ok";
+//}
+
+let isClean = () =>{
+  return "ok";
+}
+
+//function isClean(){
+//  return "ok";
+//}
+
+console.log(isClean());
+
+let myFirstPromise = new Promise((resolve, reject) => {
+  
+  if(isClean() == 'ok'){
+    resolve('111111');
+  }else{
+    reject('22222');
+  }
+});
+
+myFirstPromise.then((messageResolve) => {
+  console.log('-------    '+messageResolve);
+}).catch((messageReject) => {
+  console.log('-------    '+messageReject);
+});
+
+
+------------------------------------------------------------------------------------------------------------------
+
 let promiseToCleanTheRoom = new Promise((resolve, reject) => {
     //cleaning the room
 
