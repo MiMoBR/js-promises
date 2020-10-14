@@ -1,0 +1,19 @@
+let part1 = () =>{
+	return new Promise((resolve, reject)=>{
+		resolve('Clean the room, ');
+	});	
+};
+
+let part2 = (message)=>{
+	return new Promise((resolve, reject)=>{
+      setTimeout(function(){ resolve('Success bitch!'); }, 3000);
+	});	
+};
+
+part1().then((result)=>{
+  console.log('Finish Result --- ' + result);
+	return part2(result);
+}).then((result)=>{
+  
+  console.log('Finish Result --- ' + result);
+})
