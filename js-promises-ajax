@@ -1,0 +1,33 @@
+		function callDealerAddressMain(){
+			return new Promise(function(resolve, reject) {
+				$.ajax({
+					type: 'GET',
+					url: '<%=request.getContextPath()%>/ajax?',
+					data : {
+						'cmd' : 'listAddressDealerForItem',
+					},
+					success: function(data){
+						var accDealerAddress = data.data;
+				
+						resolve(data);
+					},
+					error: function (error) {
+						reject(error);
+					},
+// 					complete: function(){
+// 						hascallDealerAddressMain();
+// 						alert('2');
+// 					}
+				})
+			})
+		};
+		
+		function hascallDealerAddressMain(){
+						resolve(data);
+		};
+		
+		callDealerAddressMain().then((result)=> {
+			hascallDealerAddressMain();
+		}).catch((error)=> {
+			alert('Error')
+		})
